@@ -1,5 +1,5 @@
 import React from 'react';
-import { Task } from '../Utils/types'; // Assuming Task is defined in Utils/types
+import { Task } from '../Utils/types';
 
 interface TaskItemProps {
   task: Task;
@@ -7,10 +7,10 @@ interface TaskItemProps {
 }
 
 const TaskItem: React.FC<TaskItemProps> = ({ task, onEdit }) => {
-  // Styles for flex container (li)
+  
   const itemStyle: React.CSSProperties = {
     display: 'flex',
-    flexDirection: 'column', // Items arranged vertically
+    flexDirection: 'column', 
     alignItems: 'flex-start',
     backgroundColor: '#fff',
     padding: '20px',
@@ -23,15 +23,15 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onEdit }) => {
     margin: '10px auto',
   };
 
-  // Styles for the title
+
   const titleStyle: React.CSSProperties = {
     fontSize: '1.25rem',
     fontWeight: 'bold',
     marginBottom: '10px',
-    width: '100%', // Make sure title takes full width
+    width: '100%', 
   };
 
-  // Style for info items in flex rows
+  
   const infoContainerStyle: React.CSSProperties = {
     display: 'flex',
     flexDirection: 'row',
@@ -49,7 +49,6 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onEdit }) => {
     fontSize: '1rem',
   };
 
-  // Style for the button container
   const buttonContainerStyle: React.CSSProperties = {
     display: 'flex',
     justifyContent: 'flex-end',
@@ -57,7 +56,6 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onEdit }) => {
     marginTop: '10px',
   };
 
-  // Style for the button
   const buttonStyle: React.CSSProperties = {
     padding: '10px 20px',
     backgroundColor: '#007bff',
@@ -69,7 +67,6 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onEdit }) => {
     transition: 'background-color 0.3s ease',
   };
 
-  // Button hover effect
   const handleMouseOver = (e: React.MouseEvent) => {
     const target = e.target as HTMLButtonElement;
     target.style.backgroundColor = '#0056b3';
@@ -82,10 +79,8 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onEdit }) => {
 
   return (
     <li style={itemStyle}>
-      {/* Task Title */}
       <h3 style={titleStyle}>{task.title}</h3>
 
-      {/* Task Info Items */}
       <div style={infoContainerStyle}>
         <div>
           <span style={infoLabelStyle}>Status: </span>
@@ -108,7 +103,6 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onEdit }) => {
         </div>
       </div>
 
-      {/* Edit Button */}
       <div style={buttonContainerStyle}>
         <button
           style={buttonStyle}

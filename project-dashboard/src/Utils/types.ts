@@ -1,6 +1,6 @@
-// Utils/types.ts
+
 export interface Task {
-  id: string;  // Required in Task
+  id: string;  
   title: string;
   description?: string;
   assignee: string;
@@ -16,5 +16,5 @@ export interface TaskFormValues {
   priority: 'Low' | 'Medium' | 'High';
   status: 'To Do' | 'In Progress' | 'Completed';
   dueDate: string;
-  id?: string;  // Optional in TaskFormValues
+  id?: string;  
 }

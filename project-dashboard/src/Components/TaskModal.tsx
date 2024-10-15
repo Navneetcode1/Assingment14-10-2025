@@ -1,5 +1,5 @@
 import { useFormik } from 'formik';
-import { taskValidationSchema } from '../Utils/validationSchema'; // Import validation schema
+import { taskValidationSchema } from '../Utils/validationSchema'; 
 import { TaskFormValues } from '../Utils/types';
 import { useTaskContext } from '../context/TaskContext';
 
@@ -21,18 +21,18 @@ const TaskModal: React.FC<TaskModalProps> = ({ task, closeModal }) => {
       status: 'To Do',
       dueDate: '',
     },
-    validationSchema: taskValidationSchema, // Yup validation
+    validationSchema: taskValidationSchema, 
     onSubmit: (values) => {
       if (task && task.id) {
-        // Edit existing task logic
+       
         setTasks((prevTasks) =>
           prevTasks.map((t) => (t.id === task.id ? { ...values, id: task.id } : t))
         );
       } else {
-        // Create new task logic
+     
         setTasks((prevTasks) => [
           ...prevTasks,
-          { ...values, id: Date.now().toString() }, // New task creation with unique id
+          { ...values, id: Date.now().toString() },
         ]);
       }
       closeModal();
